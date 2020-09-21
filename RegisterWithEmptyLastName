@@ -1,0 +1,74 @@
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+
+import org.junit.After
+
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import internal.GlobalVariable as GlobalVariable
+
+
+WebUI.openBrowser('')
+
+WebUI.navigateToUrl('https://www.cermati.com/gabung')
+
+//validateEmail = WebUI.getAttribute(findTestObject('Cermati/txtEmail'), '')
+//validatePass = WebUI.getAttribute(findTestObject('Cermati/txtPass'), '')
+
+//WebUI.click(findTestObject('Cermati/txtPass'))
+
+//if (validateEmail == true) {
+//WebUI.verifyTextPresent("Input ini wajib diisi.", true)
+	
+//}else if(WebUI.setText(findTestObject('Cermati/txtEmail'), 'testing@mailinator.com')){
+
+	
+'input email'
+WebUI.setText(findTestObject('Cermati/txtEmail'), 'testing@mailinator.com')
+
+'input pass'
+WebUI.setText(findTestObject('Cermati/txtPass'), 'Testingtes123')
+
+
+'masukkan konfirm password'
+WebUI.setText(findTestObject('Cermati/txtConfirmPass'), 'Testingtes1233')
+
+
+'masukkan first name'
+WebUI.setText(findTestObject('Cermati/txtFirstName'), 'Akira')
+
+
+'masukkan last name'
+//WebUI.setText(findTestObject('Cermati/txtLastName'), 'Dimas')
+
+
+'input phone'
+WebUI.setText(findTestObject('Cermati/txtMobilePhone'), '08232737273')
+
+
+
+'pilih kota'
+WebUI.setText(findTestObject('Cermati/txtCity'), 'KOTA JAKARTA PUSAT')
+
+'klik register'
+WebUI.click(findTestObject('Cermati/btnReg'))
+
+
+'verify ada wording error'
+WebUI.verifyTextPresent("Input ini wajib diisi.", true)
+
+
+//}else if(WebUI.setText(findTestObject('Cermati/txtPass'), 'Testingtes123')){
+
+//}
